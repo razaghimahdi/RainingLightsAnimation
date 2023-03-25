@@ -89,7 +89,7 @@ fun RainingLightsAnimation() {
             launch {
                 yPosition.animateTo(
                     endValue,
-                    animationSpec = infiniteRepeatable(
+                    animationSpec =  infiniteRepeatable(
                         animation = tween(
                             durationMillis = 3000,
                             easing = LinearOutSlowInEasing
@@ -100,9 +100,6 @@ fun RainingLightsAnimation() {
         }
 
         light.y = yPosition.value.toDp()
-        if (light.y.toPx() == endValue) light.x =
-            with(destiny) { (0..screenWidth.toInt()).random().toDp() }
-
 
     }
 
