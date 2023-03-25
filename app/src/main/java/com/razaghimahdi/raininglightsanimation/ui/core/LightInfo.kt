@@ -5,7 +5,6 @@ import androidx.compose.ui.unit.Dp
 
 
 data class LightInfo(
-    val id: Long,
     var x: Dp,
     var y: Dp,
     val height: Dp,
