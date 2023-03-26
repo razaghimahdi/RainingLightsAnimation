@@ -1,4 +1,4 @@
-# RainingLightsAnimation
+# Raining Lights
 
 RainingLights is a library designed to bring beautiful, dynamic loading animations to your Android apps using Jetpack Compose.
 
@@ -12,6 +12,12 @@ This project serves as a showcase for the RainingLights library,
 providing users with a working example of the library's implementation. 
 The app is designed using modern principles and the latest Android development frameworks, 
 including Jetpack Compose and Material Design components.
+
+
+
+| MainScreen | DetailScreen | Paging | 
+| :---: | :---: | 
+| ![](screenshots/2.jpg) | ![](screenshots/1.jpg)  | 
 
 To use the library in your own project, follow these steps:
 
