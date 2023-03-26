@@ -15,7 +15,7 @@ including Jetpack Compose and Material Design components.
 
 
 
-| MainScreen | DetailScreen | Paging | 
+| MainScreen | DetailScreen | 
 | :---: | :---: | 
 | ![](screenshots/2.jpg) | ![](screenshots/1.jpg)  | 
 
