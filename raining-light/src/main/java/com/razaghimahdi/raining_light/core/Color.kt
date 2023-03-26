@@ -5,11 +5,11 @@ import kotlin.random.Random
 
 object RandomColor {
 
-    val list1 = listOf(
+    private val greyColorList = listOf(
         grey_1000, grey_700, grey_500
     )
 
-    val list2 = listOf(
+    private val cyanColorList = listOf(
         cyan_1000,
         cyan_900,
         cyan_500,
@@ -19,7 +19,7 @@ object RandomColor {
         cyan_100,
     )
 
-    val list3 = listOf(
+    private val lightBlueColorList = listOf(
         light_blue_1000,
         light_blue_900,
         light_blue_500,
@@ -29,29 +29,29 @@ object RandomColor {
         light_blue_100,
     )
 
-    fun randomColors(): List<Color> {
-
-        val randomColors = listOf(
-            list1,
-            list2,
-            list3,
+    internal fun randomColors(
+        randomColors: List<List<Color>> = listOf(
+            greyColorList,
+            cyanColorList,
+            lightBlueColorList,
         )
+    ): List<Color> {
         val randomIndex = Random.nextInt(randomColors.size);
         val randomElement = randomColors[randomIndex]
         return randomElement
     }
 
 
-    fun getHeadOfRandomColor(list: List<Color>): List<Color> {
+    internal fun getHeadOfRandomColor(list: List<Color>): List<Color> {
         return when (list) {
-            list1 -> {
+            greyColorList -> {
                 listOf(
                     grey_500,
                     grey_600.copy(.9f),
                     grey_700.copy(.3f)
                 )
             }
-            list2 -> {
+            cyanColorList -> {
                 listOf(
                     cyan_300,
                     cyan_200.copy(.9f),
@@ -59,7 +59,7 @@ object RandomColor {
                     cyan_050.copy(.3f),
                 )
             }
-            list3 -> {
+            lightBlueColorList -> {
                 listOf(
                     light_blue_300,
                     light_blue_200.copy(.9f),
