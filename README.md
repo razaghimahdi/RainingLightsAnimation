@@ -37,7 +37,7 @@ Add the following code to your project-level build.gradle or settings.gradle fil
 Add the following dependency to your app-level build.gradle file:
 
 	dependencies {
-	        implementation 'com.github.razaghimahdi:RainingLightsAnimation:1.0.0'
+	        implementation 'com.github.razaghimahdi:RainingLightsAnimation:1.0.2'
 	} 
 
 ### Step 3. How to use
