@@ -1,4 +1,4 @@
-package com.razaghimahdi.raininglightsanimation.ui.component
+package com.razaghimahdi.raining_light.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -10,11 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.unit.dp
-import com.razaghimahdi.raininglightsanimation.ui.core.LightInfo
+import com.razaghimahdi.raining_light.core.LightInfo
 
 
 @Composable
-fun MainLight(lightInfo: LightInfo) {
+internal fun MainLight(lightInfo: LightInfo) {
     Box(
         modifier = Modifier
             .wrapContentSize()

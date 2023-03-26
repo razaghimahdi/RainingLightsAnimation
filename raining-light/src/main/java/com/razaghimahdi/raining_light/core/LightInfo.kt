@@ -1,10 +1,10 @@
-package com.razaghimahdi.raininglightsanimation.ui.core
+package com.razaghimahdi.raining_light.core
 
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.unit.Dp
 
 
-data class LightInfo(
+internal data class LightInfo(
     var x: Dp,
     var y: Dp,
     val height: Dp,

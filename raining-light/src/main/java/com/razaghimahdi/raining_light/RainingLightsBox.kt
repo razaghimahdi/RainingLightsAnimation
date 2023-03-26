@@ -1,28 +1,34 @@
-package com.razaghimahdi.raininglightsanimation
+package com.razaghimahdi.raining_light
 
 import androidx.compose.animation.core.*
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
-import com.razaghimahdi.raininglightsanimation.ui.component.MainLight
-import com.razaghimahdi.raininglightsanimation.ui.core.LightInfo
-import com.razaghimahdi.raininglightsanimation.ui.core.toDp
-import com.razaghimahdi.raininglightsanimation.ui.core.toPx
-import com.razaghimahdi.raininglightsanimation.ui.theme.RandomColor
-import com.razaghimahdi.raininglightsanimation.ui.theme.grey_500
-import com.razaghimahdi.raininglightsanimation.ui.theme.grey_700
-import com.razaghimahdi.raininglightsanimation.ui.theme.grey_900
+import com.razaghimahdi.raining_light.component.MainLight
+import com.razaghimahdi.raining_light.core.*
+import com.razaghimahdi.raining_light.core.LightInfo
+import com.razaghimahdi.raining_light.core.toDp
+import com.razaghimahdi.raining_light.core.toPx
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 
 @Composable
-fun RainingLightsAnimation() {
+fun RainingLightsBox(
+    modifier: Modifier = Modifier
+        .fillMaxSize()
+        .background(color = Color.Black),
+    contentAlignment: Alignment = Alignment.TopStart,
+    propagateMinConstraints: Boolean = false,
+    content: @Composable BoxScope.() -> Unit
+) {
     val lights = remember { mutableStateListOf<LightInfo>() }
 
 
@@ -79,7 +85,7 @@ fun RainingLightsAnimation() {
 
 
 
-    lights.forEachIndexed { index, light ->
+    lights.forEach { light ->
         val startValue = -(light.height.toPx())
         val endValue = (screenHeight + light.height).toPx()
 
@@ -89,7 +95,7 @@ fun RainingLightsAnimation() {
             launch {
                 yPosition.animateTo(
                     endValue,
-                    animationSpec =  infiniteRepeatable(
+                    animationSpec = infiniteRepeatable(
                         animation = tween(
                             durationMillis = 3000,
                             easing = LinearOutSlowInEasing
@@ -105,15 +111,27 @@ fun RainingLightsAnimation() {
 
 
 
-    StatelessScreen(list = lights)
+    StatelessScreen(
+        list = lights,
+        modifier = modifier,
+        contentAlignment = contentAlignment,
+        propagateMinConstraints = propagateMinConstraints,
+        content = content
+    )
 
 }
 
 @Composable
-fun StatelessScreen(list: List<LightInfo>) {
+private fun StatelessScreen(
+    list: List<LightInfo>,
+    modifier: Modifier,
+    contentAlignment: Alignment = Alignment.TopStart,
+    propagateMinConstraints: Boolean = false,
+    content: @Composable BoxScope.() -> Unit
+) {
 
 
-    BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+    Box(modifier, contentAlignment, propagateMinConstraints) {
 
         list.forEach { light ->
             MainLight(
@@ -126,8 +144,11 @@ fun StatelessScreen(list: List<LightInfo>) {
                     headColor = light.headColor,
                 )
             )
-
         }
+
+        content()
+
+
     }
 
 }
