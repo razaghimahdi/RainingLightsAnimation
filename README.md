@@ -50,4 +50,11 @@ RainingLightsBox(
 ```
 That's it! With these simple steps, you can now add beautiful, dynamic loading animations to your Android apps using the RainingLights library.
 
+
+
+
+https://user-images.githubusercontent.com/61207818/227785925-3350e972-d96d-49cb-a056-10d5ad5cd5a0.mp4
+
+
+
 Developed by Mahdi Razzaghi Ghaleh
