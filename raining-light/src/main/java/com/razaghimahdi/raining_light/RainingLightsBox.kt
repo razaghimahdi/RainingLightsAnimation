@@ -127,7 +127,7 @@ fun RainingLightsBox(
 
 
     StatelessScreen(
-        list = { lights },
+        list =  lights ,
         modifier = modifier,
         contentAlignment = contentAlignment,
         propagateMinConstraints = propagateMinConstraints,
@@ -138,7 +138,7 @@ fun RainingLightsBox(
 
 @Composable
 private fun StatelessScreen(
-    list: () -> List<LightInfo>,
+    list:  List<LightInfo>,
     modifier: Modifier,
     contentAlignment: Alignment = Alignment.TopStart,
     propagateMinConstraints: Boolean = false,
@@ -148,8 +148,8 @@ private fun StatelessScreen(
 
     Box(modifier, contentAlignment, propagateMinConstraints) {
 
-        list().forEach { light ->
-            MainLight {
+        list.forEach { light ->
+            MainLight (
                 LightInfo(
                     x = light.x,
                     y = light.y,
@@ -157,8 +157,8 @@ private fun StatelessScreen(
                     thickness = light.thickness,
                     brush = light.brush,
                     headColor = light.headColor,
-                )
-            }
+                ))
+
         }
 
         content()
