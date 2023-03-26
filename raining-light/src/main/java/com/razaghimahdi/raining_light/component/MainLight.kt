@@ -29,26 +29,26 @@ import com.razaghimahdi.raining_light.core.LightInfo
 
 
 @Composable
-internal fun MainLight(lightInfo: LightInfo) {
+internal fun MainLight(lightInfo:()-> LightInfo) {
     Box(
         modifier = Modifier
             .wrapContentSize()
-            .offset(lightInfo.x, lightInfo.y),
+            .offset(lightInfo().x, lightInfo().y),
         contentAlignment = Alignment.BottomCenter
     ) {
 
-        val headSize = lightInfo.thickness * 3
+        val headSize = lightInfo().thickness * 3
 
         Divider(
             modifier = Modifier
-                .height(lightInfo.height)
-                .width(lightInfo.thickness)
+                .height(lightInfo().height)
+                .width(lightInfo().thickness)
                 .padding(bottom = headSize / 2)
-                .background(brush = lightInfo.brush),
-            thickness = lightInfo.thickness
+                .background(brush = lightInfo().brush),
+            thickness = lightInfo().thickness
         )
 
-        lightInfo.headColor?.let {
+        lightInfo().headColor?.let {
             Box(
                 Modifier
                     .size(headSize)
