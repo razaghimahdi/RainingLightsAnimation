@@ -5,12 +5,16 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
     primary = Purple200,
     primaryVariant = Purple700,
     secondary = Teal200,
     background = grey_1000_b,
+    onBackground = Color.White,
+    onSurface = grey_100,
+
 )
 
 private val LightColorPalette = lightColors(
@@ -18,6 +22,8 @@ private val LightColorPalette = lightColors(
     primaryVariant = Purple700,
     secondary = Teal200,
     background = grey_1000_b,
+    onBackground = Color.White,
+    onSurface = grey_100,
 
     /* Other default colors to override
     background = Color.White,
@@ -42,7 +48,7 @@ fun RainingLightsAnimationTheme(
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
+        typography = OrbitronTypography,
         shapes = Shapes,
         content = content
     )

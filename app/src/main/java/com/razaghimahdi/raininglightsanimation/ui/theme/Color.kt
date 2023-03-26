@@ -84,6 +84,9 @@ val Purple500 = Color(0xFF6200EE)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 
+val ButtonColor = Color(0x8B022638)
+val ButtonContentColor = Color(0xFF0090CE)
+
 
 val light_blue_050 = Color(0xFFe1f5fe)
 val light_blue_100 = Color(0xFFb3e5fc)
@@ -129,8 +132,11 @@ val grey_700 = Color(0xFF616161)
 val grey_800 = Color(0xFF424242)
 val grey_900 = Color(0xFF212121)
 val grey_1000 = Color(0x80131313)
+val grey_1500 = Color(0x40131313)
 val grey_1000_b = Color(0xFF000000)
 val grey_1000_w = Color(0xFFffffff)
+
+val transparent = Color(0x0)
 
 
 
