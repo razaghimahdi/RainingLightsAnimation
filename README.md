@@ -17,7 +17,7 @@ including Jetpack Compose and Material Design components.
 
 | MainScreen | DetailScreen | 
 | :---: | :---: | 
-| ![](screenshots/2.jpg) | ![](screenshots/1.jpg)  | 
+| <img src="screenshots/2.jpg" width="300"/> | <img src="screenshots/1.jpg" width="300"/>  | 
 
 To use the library in your own project, follow these steps:
 
