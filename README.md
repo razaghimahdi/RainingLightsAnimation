@@ -13,7 +13,8 @@ providing users with a working example of the library's implementation.
 The app is designed using modern principles and the latest Android development frameworks, 
 including Jetpack Compose and Material Design components.
 
-
+## Give a Star! ⭐
+If you like or are using this project to learn or start your solution, please give it a star. Thanks!
 
 | MainScreen | DetailScreen | 
 | :---: | :---: | 
